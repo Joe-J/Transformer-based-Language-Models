@@ -78,12 +78,15 @@ def linear_attn(q, k, v, kv_mask = None):
 
 
 
+
+
+~~The training stage is not stable，i only train 10 epoch,so there is no big difference.~~
+**Mistakes:** I design a function to run training process, but i reference model for several times which leads to program conflicts,so the loss is too high, now i fix this problem, here is the new results.
+
 |  Dataset | Attention Type    | Tokenization | Test Loss | Test Perplexity |
 ---------|-------------------|--------------|-----------|-----------------|
-| PTB              | Self Attention    | word          | 10.99      | 59099.57           |
-| PTB              |Linear Attention  | word          | 9.73      | 16765.25        |
-
-The training stage is not stable，i only train 10 epoch,so there is no big difference.
+| PTB              | Self Attention    | word          | 5.35      | 210.35           |
+| PTB              |Linear Attention  | word          | 5.45      | 232.69        |
 
 ## Citations
 ```
